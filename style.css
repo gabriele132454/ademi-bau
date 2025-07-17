@@ -110,15 +110,18 @@
 .header-content {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  padding: 28px 0 0 0;
+  justify-content: flex-start;
+  padding-left: 0;
+  padding-right: 100%;
 }
 
 .header-left {
   display: flex;
-  align-items: flex-start;
   flex-direction: column;
-  gap: 0;
+  align-items: flex-start;
+  padding-left: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .header-logo {
@@ -190,7 +193,7 @@
   margin-right: auto;
 }
 .header-blue-bar {
-  width: 100vw;
+  width: 100%;
   position: absolute;
   left: 0;
   height: 40px;
@@ -293,10 +296,15 @@
   line-height: 1.3;
 }
 
+header, nav, .header-menu, .header-content, .header-left {
+  background: #f3f4f6 !important;
+}
+
 header {
   background: #f3f4f6;
   padding: 48px 0 32px 0;
   text-align: center;
   border-bottom: 1px solid #e0e4ea;
   box-shadow: 0 2px 8px #e0e4ea33;
+  width: 100%;
 } 
