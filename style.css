@@ -118,9 +118,9 @@
   gap: 22px;
 }
 .header-logo {
-  max-height: 120px;
-  width: auto;
-  height: auto;
+  width: 220px;
+  height: 80px;
+  object-fit: fill;
   display: block;
   margin-right: 24px;
   margin-left: 0;
@@ -185,11 +185,12 @@
   margin-right: auto;
 }
 .header-blue-bar {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100vw;
+  position: relative;
+  left: 0;
   height: 40px;
   background: linear-gradient(to bottom, #cbe3f3 80%, rgba(203,227,243,0) 100%);
+  margin: 0;
   padding: 0;
 }
 .header-description-center {
