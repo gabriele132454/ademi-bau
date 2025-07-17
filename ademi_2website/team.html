@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team – LD Projekt GmbH- und Trockenbau GmbH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #23272b;
+      color: #e5e7eb;
+      font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #f3f4f6;
+      padding: 32px 0 16px 0;
+      text-align: center;
+      border-bottom: 1px solid #e0e4ea;
+      box-shadow: 0 2px 8px #e0e4ea33;
+    }
+    .site-logo {
+      margin-bottom: 12px;
+    }
+    .site-logo img {
+      height: 120px;
+      border-radius: 12px;
+      background: #f3f4f6;
+      box-shadow: 0 2px 8px #e0e4ea33;
+    }
+    .site-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.1rem;
+      color: #2a3a4b;
+      margin: 0;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+    .site-description {
+      color: #5a6b7b;
+      font-size: 1.08rem;
+      margin-bottom: 0;
+    }
+    nav {
+      margin: 24px 0 0 0;
+      display: flex;
+      justify-content: center;
+      background: #fff;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      padding: 0;
+      gap: 0;
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      position: relative;
+      z-index: 100;
+      font-family: Arial, sans-serif;
+    }
+    .menu-list {
+      display: flex;
+      gap: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .menu-list li {
+      display: flex;
+    }
+    nav a {
+      color: #1a237e;
+      text-decoration: none;
+      font-weight: 400;
+      margin: 0 18px 0 0;
+      font-size: 1.05rem;
+      padding: 16px 0 12px 0;
+      border-radius: 0;
+      border-bottom: 2px solid transparent;
+      background: none;
+      transition: color 0.2s, border-bottom 0.2s;
+      display: inline-block;
+      font-family: inherit;
+    }
+    nav a:hover, nav a.active {
+      color: #0d47a1;
+      border-bottom: 2.5px solid #0d47a1;
+      background: none;
+      box-shadow: none;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: #1a237e;
+      cursor: pointer;
+      margin-left: 12px;
+      margin-right: 0;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .menu-toggle:focus, .menu-toggle:hover {
+      background: #e0e4ea;
+    }
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 0;
+        width: 100%;
+        border-radius: 0;
+      }
+      .menu-list {
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 56px;
+        right: 0;
+        min-width: 180px;
+        box-shadow: 0 2px 8px #e0e4ea33;
+        border-radius: 0 0 18px 18px;
+        display: none;
+      }
+      .menu-list.open {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      nav a {
+        margin: 0;
+        padding: 14px 18px;
+        border-bottom: 1px solid #e0e4ea;
+        width: 100%;
+      }
+      nav a:last-child {
+        border-bottom: none;
+      }
+    }
+    .main-content {
+      max-width: 900px;
+      margin: 48px auto 32px auto;
+      background: #23272b;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px #181a1b33;
+      padding: 38px 24px;
+    }
+    .main-content h1 {
+      color: #60a5fa;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 0;
+    }
+    .main-content p {
+      color: #bfc6ce;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    .modern-footer {
+      background: #181a1b;
+      color: #e5e7eb;
+      padding: 40px 0 18px 0;
+      text-align: left;
+      border-top: none;
+      margin-top: 48px;
+      font-size: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+      box-shadow: 0 -2px 16px #0002;
+    }
+    .modern-footer-col {
+      flex: 1 1 0;
+      min-width: 180px;
+      margin: 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .modern-footer-col.center {
+      text-align: center;
+      align-items: center;
+    }
+    .modern-footer-col.right {
+      text-align: right;
+      align-items: flex-end;
+    }
+    .modern-footer strong {
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      font-size: 1.08em;
+    }
+    .modern-footer a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .modern-footer a:hover {
+      color: #3b82f6;
+      text-decoration: underline;
+    }
+    .modern-footer-sep {
+      width: 1px;
+      background: #2d2f31;
+      min-height: 120px;
+      margin: 0 0px;
+      align-self: stretch;
+      display: block;
+    }
+    .modern-footer-copyright {
+      margin-top: 24px;
+      font-size: 0.97em;
+      color: #9ca3af;
+      text-align: right;
+    }
+    @media (max-width: 900px) {
+      .modern-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: none;
+      }
+      .modern-footer-col {
+        margin: 0 8px 18px 8px;
+        text-align: left !important;
+        align-items: flex-start !important;
+      }
+      .modern-footer-sep {
+        display: none;
+      }
+      .modern-footer-copyright {
+        text-align: left;
+        margin-top: 12px;
+      }
+    }
+    .header-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-left: 16px;
+      padding-right: 60px;
+    }
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 0;
+    }
+    .header-logo {
+      margin-bottom: -18px;
+      height: 80px;
+      max-width: 180px;
+      margin-left: 35px;
+    }
+    .header-description-bar {
+      text-align: left;
+      margin-left: 0;
+      color: #5a6b7b;
+      font-size: 0.93rem;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <header class="custom-header">
+    <div class="header-content header-row">
+      <div class="header-left">
+        <img src="images/finallogo.png" alt="LD Projekt GmbH- und Trockenbau GmbH" class="header-logo">
+        <div class="header-description-bar">
+          Trockenbauwände &amp; Wandverkleidungen | Abgehängte Decken | Akustikdecken
+        </div>
+      </div>
+      <nav class="header-menu">
+        <a href="index.html" class="menu-link">Home</a>
+        <span class="menu-sep">|</span>
+        <a href="ueber-uns.html" class="menu-link">Über uns</a>
+        <span class="menu-sep">|</span>
+        <a href="team.html" class="menu-link active">Team</a>
+        <span class="menu-sep">|</span>
+        <a href="agb.html" class="menu-link">AGB</a>
+        <span class="menu-sep">|</span>
+        <a href="kontakt.html" class="menu-link">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+  <div class="header-blue-bar"></div>
+  <div class="main-content">
+    <h1 class="entry-title" style="color:#60a5fa;text-align:center;">Team Ademi – Bau</h1>
+    <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;margin:40px 0 40px 0;">
+      <div style="flex:1 1 260px;min-width:220px;max-width:320px;background:#2d3135;border-radius:12px;box-shadow:0 2px 8px #181a1b22;padding:24px 18px 18px 18px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/MEVLAN.jpg" alt="Mevlan Ademi" style="width:120px;height:120px;object-fit:cover;border-radius:50%;margin-bottom:12px;" />
+        <strong>MEVLAN ADEMI</strong><br>Geschäftsführer<br>Mob +43 660 472 49 29<br>office@ademi-bau.at
+      </div>
+      <div style="flex:1 1 260px;min-width:220px;max-width:320px;background:#2d3135;border-radius:12px;box-shadow:0 2px 8px #181a1b22;padding:24px 18px 18px 18px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/RAMADAN.jpg" alt="Ramadan Ademi" style="width:120px;height:120px;object-fit:cover;border-radius:50%;margin-bottom:12px;" />
+        <strong>RAMADAN ADEMI</strong><br>Projektleitung<br>Mob +43 676 721 33 72<br>office@ademi-bau.at
+      </div>
+      <div style="flex:1 1 260px;min-width:220px;max-width:320px;background:#2d3135;border-radius:12px;box-shadow:0 2px 8px #181a1b22;padding:24px 18px 18px 18px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/BETIME.jpg" alt="Betime Ademi" style="width:120px;height:120px;object-fit:cover;border-radius:50%;margin-bottom:12px;" />
+        <strong>BETIME ADEMI</strong><br>Sekretariat<br>Mob +43 660 472 49 29<br>office@ademi-bau.at
+      </div>
+      <div style="flex:1 1 260px;min-width:220px;max-width:320px;background:#2d3135;border-radius:12px;box-shadow:0 2px 8px #181a1b22;padding:24px 18px 18px 18px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/EJUP.jpg" alt="Ejup Baftjari" style="width:120px;height:120px;object-fit:cover;border-radius:50%;margin-bottom:12px;" />
+        <strong>EJUP BAFTJARI</strong><br>Projektleitung<br>Mob +43 660 472 49 29<br>office@ademi-bau.at
+      </div>
+      <div style="flex:1 1 260px;min-width:220px;max-width:320px;background:#2d3135;border-radius:12px;box-shadow:0 2px 8px #181a1b22;padding:24px 18px 18px 18px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/IVANA.jpg" alt="Ivana Milosevic" style="width:120px;height:120px;object-fit:cover;border-radius:50%;margin-bottom:12px;" />
+        <strong>IVANA MILOSEVIC</strong><br>Sekretariat<br>Mob +43 681 206 869 42<br>office@ademi-bau.at
+      </div>
+      <div style="flex:1 1 260px;min-width:220px;max-width:320px;background:#2d3135;border-radius:12px;box-shadow:0 2px 8px #181a1b22;padding:24px 18px 18px 18px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/GABRIEL.jpg" alt="Gabriel Steiner" style="width:120px;height:120px;object-fit:cover;border-radius:50%;margin-bottom:12px;" />
+        <strong>GABRIEL STEINER</strong><br>TECHNIK / KALKULATION<br>Mob +43 660 472 49 29<br>office@ademi-bau.at
+      </div>
+    </div>
+    <h2 style="color:#60a5fa;margin-top:40px;text-align:center;">OBERMONTEURE</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;margin:32px 0 0 0;">
+      <div style="flex:1 1 340px;min-width:260px;max-width:340px;background:#2d3135;border-radius:16px;box-shadow:0 2px 12px #181a1b33;padding:32px 24px 24px 24px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/JOSEF.jpg" alt="Josef Manski" style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:16px;background:#fff;" />
+        <strong style="font-size:1.25em;">JOSEF MANSKI</strong><br>Obermonteur
+      </div>
+      <div style="flex:1 1 340px;min-width:260px;max-width:340px;background:#2d3135;border-radius:16px;box-shadow:0 2px 12px #181a1b33;padding:32px 24px 24px 24px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/NIKOLA.jpg" alt="Nikola Anagnosti" style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:16px;background:#fff;" />
+        <strong style="font-size:1.25em;">NIKOLA ANAGNOSTI</strong><br>Obermonteur
+      </div>
+      <div style="flex:1 1 340px;min-width:260px;max-width:340px;background:#2d3135;border-radius:16px;box-shadow:0 2px 12px #181a1b33;padding:32px 24px 24px 24px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/WOJAS.jpg" alt="Wojas Leszek Andzej" style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:16px;background:#fff;" />
+        <strong style="font-size:1.25em;">WOJAS LESZEK ANDZEJ</strong><br>Obermonteur
+      </div>
+      <div style="flex:1 1 340px;min-width:260px;max-width:340px;background:#2d3135;border-radius:16px;box-shadow:0 2px 12px #181a1b33;padding:32px 24px 24px 24px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/IVAN.jpg" alt="Ivan Zlatanovic" style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:16px;background:#fff;" />
+        <strong style="font-size:1.25em;">IVAN ZLATANOVIC</strong><br>Obermonteur
+      </div>
+      <div style="flex:1 1 340px;min-width:260px;max-width:340px;background:#2d3135;border-radius:16px;box-shadow:0 2px 12px #181a1b33;padding:32px 24px 24px 24px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/MAHIR.jpg" alt="Mahir Fetai" style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:16px;background:#fff;" />
+        <strong style="font-size:1.25em;">MAHIR FETAI</strong><br>Obermonteur
+      </div>
+      <div style="flex:1 1 340px;min-width:260px;max-width:340px;background:#2d3135;border-radius:16px;box-shadow:0 2px 12px #181a1b33;padding:32px 24px 24px 24px;margin:0 8px;display:flex;flex-direction:column;align-items:center;">
+        <img src="images/ANTO.jpg" alt="Anto Zdravac" style="width:160px;height:160px;object-fit:cover;border-radius:50%;margin-bottom:16px;background:#fff;" />
+        <strong style="font-size:1.25em;">ANTO ZDRAVAC</strong><br>Obermonteur
+      </div>
+    </div>
+  </div>
+  <footer class="modern-footer">
+    <div class="modern-footer-col left">
+      <strong>Adresse</strong>
+      <span>Kirchstetterngasse 61 / 3</span>
+      <span>1160 Wien</span>
+    </div>
+    <span class="modern-footer-sep"></span>
+    <div class="modern-footer-col center">
+      <strong>Öffnungszeiten</strong>
+      <span>Montag bis Donnerstag: 08–17 Uhr</span>
+      <span>Freitag: 09–13 Uhr</span>
+    </div>
+    <span class="modern-footer-sep"></span>
+    <div class="modern-footer-col right">
+      <span><strong>Tel</strong> <a href="tel:+436604724929">+43 660 472 49 29</a></span>
+      <span><strong>Email</strong> <a href="mailto:office@ademi-bau.at">office@ademi-bau.at</a></span>
+      <span><strong>UDI</strong> ATU74326847</span>
+      <span><strong>Firmenbuch</strong> FN 511532 d</span>
+      <div class="modern-footer-copyright">
+        &copy; 2025 <a href="#">Ademi Sanierung- und Trockenbau GmbH</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Menu responsivo e acessível
+    const menuToggle = document.getElementById('menuToggle');
+    const mainMenu = document.getElementById('mainMenu');
+    menuToggle.addEventListener('click', function() {
+      const expanded = mainMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', expanded);
+    });
+    menuToggle.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        menuToggle.click();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (!mainMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mainMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', false);
+      }
+    });
+    // Destacar página ativa
+    const menuLinks = mainMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+        menuLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+      link.addEventListener('click', function() {
+        menuLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        mainMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', false);
+      });
+    });
+    // Acessibilidade: permitir navegação por teclado no menu
+    mainMenu.addEventListener('keydown', function(e) {
+      const items = Array.from(mainMenu.querySelectorAll('a'));
+      const index = items.indexOf(document.activeElement);
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = (index + 1) % items.length;
+        items[next].focus();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = (index - 1 + items.length) % items.length;
+        items[prev].focus();
+      }
+    });
+  </script>
+</body>
+</html> 
