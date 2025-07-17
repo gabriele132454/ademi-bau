@@ -106,17 +106,20 @@
   padding: 0;
   margin: 0;
 }
+
 .header-content {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding: 28px 0 0 0;
 }
+
 .header-left {
   display: flex;
   align-items: flex-start;
   gap: 22px;
 }
+
 .header-logo {
   width: 450px;
   height: 70px;
