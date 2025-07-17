@@ -117,16 +117,18 @@
 .header-left {
   display: flex;
   align-items: flex-start;
-  gap: 22px;
+  flex-direction: column;
+  gap: 0;
 }
 
 .header-logo {
-  width: 450px;
-  height: 70px;
+  width: 320px;
+  height: 80px;
   object-fit: fill;
   display: block;
   margin-right: 24px;
   margin-left: 0;
+  margin-bottom: 0;
 }
 .header-title-block {
   display: flex;
@@ -181,8 +183,8 @@
   color: #365462;
   font-weight: 500;
   letter-spacing: 0.2px;
-  margin: 8px 0 0 0;
-  padding: 0 0 12px 32px;
+  margin: 0;
+  padding: 0;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
